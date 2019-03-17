@@ -38,6 +38,9 @@ namespace InvitationProject
         private void btnChange_Click(object sender, EventArgs e)
         {
             int count = 0;
+            lbStatus.Text = "Status:";
+            progressBar.Value = 0;
+            //int status = 0;
             //int newFileName = 1;
             if (!string.IsNullOrWhiteSpace(strFilePath))
             {
@@ -99,12 +102,36 @@ namespace InvitationProject
                         writer.Close();
                         reader.Close();
                     }
-                    randNum = randInt.Next(442, 1178);
+                    randNum = randInt.Next(128, 312);
                     Thread.Sleep(randNum);
+                    //switch (status)
+                    //{
+                    //    case 0:
+                    //        lbStatus.Text = "Status: Processing.";
+                    //        status++;
+                    //        break;
+                    //    case 1:
+                    //        lbStatus.Text = "Status: Processing..";
+                    //        status++;
+                    //        break;
+                    //    case 2:
+                    //        lbStatus.Text = "Status: Processing...";
+                    //        status = 0;
+                    //        break;
+                    //    default:
+                    //        lbStatus.Text = "Status: " + Convert.ToString(status);
+                    //        break;
+                    //}
+                    progressBar.Value = i*10;
                 }
                 if (count == 0)
                 {
                     MessageBox.Show("กรุณากรอกชื่ออย่างน้อย 1 ชื่อ");
+                    lbStatus.Text = "Status:";
+                }
+                else
+                {
+                    lbStatus.Text = "Status: Completed";
                 }
             }
             else
@@ -115,7 +142,9 @@ namespace InvitationProject
         private void btnSend_Click(object sender, EventArgs e)
         {
             int count = 0;
-            string strMsg;
+            lbStatus.Text = "Status:";
+            progressBar.Value = 0;
+            //int status = 0;
             for (int i = 1; i < 11; i++)
             {
                 TextBox txtName = (TextBox)this.Controls.Find("txtName" + i, true)[0];
@@ -129,13 +158,12 @@ namespace InvitationProject
                         EnableSsl = true
                     };
 
-                    //strMsg = "เรียน " + txtName.Text + "@" + txtMessage.Text;
-                    //strMsg = strMsg.Replace("@", Environment.NewLine);
                     var message = new MailMessage(txtEmail.Text, txtEmail.Text)
                     {
                         Subject = txtSubject.Text,
                         Body = "เรียน " + txtName.Text + Environment.NewLine + txtMessage.Text
                     };
+
                     message.Attachments.Add(new Attachment(txtExportedFilePath.Text + @"\หนังสือเชิญ" + txtName.Text + ".pdf"));
                     if (strAttchPath1 != "" && strAttchPath1 != null)
                         message.Attachments.Add(new Attachment(strAttchPath1));
@@ -145,25 +173,49 @@ namespace InvitationProject
                         message.Attachments.Add(new Attachment(strAttchPath3));
                     client.Send(message);
                 }
-                randNum = randInt.Next(500, 1000);
+                randNum = randInt.Next(500, 1024);
                 Thread.Sleep(randNum);
+
+                //switch (status)
+                //{
+                //    case 0:
+                //        lbStatus.Text = "Status: Processing.";
+                //        break;
+                //    case 1:
+                //        lbStatus.Text = "Status: Processing..";
+                //        break;
+                //    case 2:
+                //        lbStatus.Text = "Status: Processing...";
+                //        status = 0;
+                //        break;
+                //    default:
+                //        lbStatus.Text = "Status: Processing...";
+                //        break;
+                //}
+                progressBar.Value = i * 10;
             }
             if (count == 0)
+            {
                 MessageBox.Show("กรุณากรอกชื่อและEmail");
+                lbStatus.Text = "Status:";
+            }
+            else
+            {
+                lbStatus.Text = "Status: Completed";
+            }
 
-            //var client = new SmtpClient("smtp.gmail.com", 587)
-            //{
-            //    Credentials = new NetworkCredential("suwanon.c@gmail.com", "e8FF6740"),
-            //    EnableSsl = true
-            //};
-            //var message = new MailMessage("zeroonez1team@gmail.com", "zeroonez1team@gmail.com")
-            //{
-            //    Subject = "Test sending invitation email",
-            //    Body = "testing"
-            //};
-            //message.Attachments.Add(new Attachment("ทดสอบ.pdf"));
-
-        }
+    //var client = new SmtpClient("smtp.gmail.com", 587)
+    //{
+    //    Credentials = new NetworkCredential("suwanon.c@gmail.com", "e8FF6740"),
+    //    EnableSsl = true
+    //};
+    //var message = new MailMessage("zeroonez1team@gmail.com", "zeroonez1team@gmail.com")
+    //{
+    //    Subject = "Test sending invitation email",
+    //    Body = "testing"
+    //};
+    //message.Attachments.Add(new Attachment("ทดสอบ.pdf"));
+}
 
 
         private void btnFilePath_Click(object sender, EventArgs e)

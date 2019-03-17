@@ -91,7 +91,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.txtAttchPath3 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.lbStatus = new System.Windows.Forms.Label();
             this.btnAttchFile1 = new System.Windows.Forms.Button();
             this.btnAttchFile2 = new System.Windows.Forms.Button();
@@ -668,12 +668,12 @@
             this.label24.TabIndex = 68;
             this.label24.Text = "เอกสารแนบ3:";
             // 
-            // progressBar1
+            // progressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(651, 475);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(304, 20);
-            this.progressBar1.TabIndex = 70;
+            this.progressBar.Location = new System.Drawing.Point(651, 475);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(304, 20);
+            this.progressBar.TabIndex = 70;
             // 
             // lbStatus
             // 
@@ -723,7 +723,7 @@
             this.Controls.Add(this.btnAttchFile2);
             this.Controls.Add(this.btnAttchFile1);
             this.Controls.Add(this.lbStatus);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.txtAttchPath3);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.txtAttchPath2);
@@ -862,7 +862,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox txtAttchPath3;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.Button btnAttchFile1;
         private System.Windows.Forms.Button btnAttchFile2;
