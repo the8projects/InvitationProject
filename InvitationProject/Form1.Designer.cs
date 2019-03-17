@@ -220,7 +220,7 @@
             this.txtName1.Location = new System.Drawing.Point(43, 43);
             this.txtName1.Name = "txtName1";
             this.txtName1.Size = new System.Drawing.Size(276, 20);
-            this.txtName1.TabIndex = 1;
+            this.txtName1.TabIndex = 0;
             // 
             // txtName2
             // 
@@ -244,56 +244,56 @@
             this.txtName3.Location = new System.Drawing.Point(43, 95);
             this.txtName3.Name = "txtName3";
             this.txtName3.Size = new System.Drawing.Size(276, 20);
-            this.txtName3.TabIndex = 3;
+            this.txtName3.TabIndex = 4;
             // 
             // txtName4
             // 
             this.txtName4.Location = new System.Drawing.Point(43, 121);
             this.txtName4.Name = "txtName4";
             this.txtName4.Size = new System.Drawing.Size(276, 20);
-            this.txtName4.TabIndex = 4;
+            this.txtName4.TabIndex = 6;
             // 
             // txtName5
             // 
             this.txtName5.Location = new System.Drawing.Point(43, 147);
             this.txtName5.Name = "txtName5";
             this.txtName5.Size = new System.Drawing.Size(276, 20);
-            this.txtName5.TabIndex = 5;
+            this.txtName5.TabIndex = 8;
             // 
             // txtName6
             // 
             this.txtName6.Location = new System.Drawing.Point(43, 173);
             this.txtName6.Name = "txtName6";
             this.txtName6.Size = new System.Drawing.Size(276, 20);
-            this.txtName6.TabIndex = 6;
+            this.txtName6.TabIndex = 10;
             // 
             // txtName7
             // 
             this.txtName7.Location = new System.Drawing.Point(43, 199);
             this.txtName7.Name = "txtName7";
             this.txtName7.Size = new System.Drawing.Size(276, 20);
-            this.txtName7.TabIndex = 7;
+            this.txtName7.TabIndex = 12;
             // 
             // txtName8
             // 
             this.txtName8.Location = new System.Drawing.Point(43, 225);
             this.txtName8.Name = "txtName8";
             this.txtName8.Size = new System.Drawing.Size(276, 20);
-            this.txtName8.TabIndex = 8;
+            this.txtName8.TabIndex = 14;
             // 
             // txtName9
             // 
             this.txtName9.Location = new System.Drawing.Point(43, 251);
             this.txtName9.Name = "txtName9";
             this.txtName9.Size = new System.Drawing.Size(276, 20);
-            this.txtName9.TabIndex = 9;
+            this.txtName9.TabIndex = 16;
             // 
             // txtName10
             // 
             this.txtName10.Location = new System.Drawing.Point(43, 277);
             this.txtName10.Name = "txtName10";
             this.txtName10.Size = new System.Drawing.Size(276, 20);
-            this.txtName10.TabIndex = 10;
+            this.txtName10.TabIndex = 18;
             // 
             // label6
             // 
@@ -445,70 +445,70 @@
             this.txtEmail10.Location = new System.Drawing.Point(351, 277);
             this.txtEmail10.Name = "txtEmail10";
             this.txtEmail10.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail10.TabIndex = 20;
+            this.txtEmail10.TabIndex = 19;
             // 
             // txtEmail9
             // 
             this.txtEmail9.Location = new System.Drawing.Point(351, 251);
             this.txtEmail9.Name = "txtEmail9";
             this.txtEmail9.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail9.TabIndex = 19;
+            this.txtEmail9.TabIndex = 17;
             // 
             // txtEmail8
             // 
             this.txtEmail8.Location = new System.Drawing.Point(351, 225);
             this.txtEmail8.Name = "txtEmail8";
             this.txtEmail8.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail8.TabIndex = 18;
+            this.txtEmail8.TabIndex = 15;
             // 
             // txtEmail7
             // 
             this.txtEmail7.Location = new System.Drawing.Point(351, 199);
             this.txtEmail7.Name = "txtEmail7";
             this.txtEmail7.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail7.TabIndex = 17;
+            this.txtEmail7.TabIndex = 13;
             // 
             // txtEmail6
             // 
             this.txtEmail6.Location = new System.Drawing.Point(351, 173);
             this.txtEmail6.Name = "txtEmail6";
             this.txtEmail6.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail6.TabIndex = 16;
+            this.txtEmail6.TabIndex = 11;
             // 
             // txtEmail5
             // 
             this.txtEmail5.Location = new System.Drawing.Point(351, 147);
             this.txtEmail5.Name = "txtEmail5";
             this.txtEmail5.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail5.TabIndex = 15;
+            this.txtEmail5.TabIndex = 9;
             // 
             // txtEmail4
             // 
             this.txtEmail4.Location = new System.Drawing.Point(351, 121);
             this.txtEmail4.Name = "txtEmail4";
             this.txtEmail4.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail4.TabIndex = 14;
+            this.txtEmail4.TabIndex = 7;
             // 
             // txtEmail3
             // 
             this.txtEmail3.Location = new System.Drawing.Point(351, 95);
             this.txtEmail3.Name = "txtEmail3";
             this.txtEmail3.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail3.TabIndex = 13;
+            this.txtEmail3.TabIndex = 5;
             // 
             // txtEmail2
             // 
             this.txtEmail2.Location = new System.Drawing.Point(351, 69);
             this.txtEmail2.Name = "txtEmail2";
             this.txtEmail2.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail2.TabIndex = 12;
+            this.txtEmail2.TabIndex = 3;
             // 
             // txtEmail1
             // 
             this.txtEmail1.Location = new System.Drawing.Point(351, 43);
             this.txtEmail1.Name = "txtEmail1";
             this.txtEmail1.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail1.TabIndex = 11;
+            this.txtEmail1.TabIndex = 1;
             // 
             // txtMessage
             // 
@@ -517,7 +517,7 @@
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtMessage.Size = new System.Drawing.Size(304, 295);
-            this.txtMessage.TabIndex = 22;
+            this.txtMessage.TabIndex = 21;
             // 
             // label20
             // 
@@ -544,14 +544,14 @@
             this.txtSubject.Location = new System.Drawing.Point(651, 43);
             this.txtSubject.Name = "txtSubject";
             this.txtSubject.Size = new System.Drawing.Size(304, 20);
-            this.txtSubject.TabIndex = 21;
+            this.txtSubject.TabIndex = 20;
             // 
             // txtUsername
             // 
             this.txtUsername.Location = new System.Drawing.Point(405, 334);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(221, 20);
-            this.txtUsername.TabIndex = 23;
+            this.txtUsername.TabIndex = 22;
             // 
             // label22
             // 
@@ -577,7 +577,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(221, 20);
-            this.txtPassword.TabIndex = 24;
+            this.txtPassword.TabIndex = 23;
             // 
             // btnSend
             // 
@@ -585,7 +585,7 @@
             this.btnSend.Location = new System.Drawing.Point(785, 399);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(170, 50);
-            this.btnSend.TabIndex = 25;
+            this.btnSend.TabIndex = 24;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);

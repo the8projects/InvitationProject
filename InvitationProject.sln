@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InvitationProject", "InvitationProject\InvitationProject.csproj", "{1BAF1CB4-4FFC-486D-911C-767E8A46F34F}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup1", "Setup1\Setup1.vdproj", "{F8DF596C-CD99-4633-83D1-7200ECEA5691}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "InvitationProjectInstaller", "InvitationProjectInstaller\InvitationProjectInstaller.vdproj", "{FA691CB5-D835-4FC3-A4D0-684A75D1DF28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{1BAF1CB4-4FFC-486D-911C-767E8A46F34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BAF1CB4-4FFC-486D-911C-767E8A46F34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BAF1CB4-4FFC-486D-911C-767E8A46F34F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8DF596C-CD99-4633-83D1-7200ECEA5691}.Debug|Any CPU.ActiveCfg = Debug
-		{F8DF596C-CD99-4633-83D1-7200ECEA5691}.Release|Any CPU.ActiveCfg = Release
+		{FA691CB5-D835-4FC3-A4D0-684A75D1DF28}.Debug|Any CPU.ActiveCfg = Debug
+		{FA691CB5-D835-4FC3-A4D0-684A75D1DF28}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

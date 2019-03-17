@@ -18,7 +18,7 @@ namespace InvitationProject
 {
     public partial class Form1 : Form
     {
-        MailMessage msg;
+        //MailMessage msg;
         string strFilePath;
         string strAttchPath1;
         string strAttchPath2;
