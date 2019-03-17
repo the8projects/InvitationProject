@@ -57,7 +57,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.btnFilePath = new System.Windows.Forms.Button();
@@ -81,16 +80,22 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.chkSSL = new System.Windows.Forms.CheckBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
-            this.txtPort = new System.Windows.Forms.TextBox();
-            this.txtSmtp = new System.Windows.Forms.TextBox();
             this.txtExportedFilePath = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.btnExportedFilePath = new System.Windows.Forms.Button();
+            this.lb = new System.Windows.Forms.Label();
+            this.txtAttchPath1 = new System.Windows.Forms.TextBox();
+            this.txtAttchPath2 = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtAttchPath3 = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lbStatus = new System.Windows.Forms.Label();
+            this.btnAttchFile1 = new System.Windows.Forms.Button();
+            this.btnAttchFile2 = new System.Windows.Forms.Button();
+            this.btnAttchFile3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numX)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numFontSize)).BeginInit();
@@ -99,11 +104,11 @@
             // btnChange
             // 
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnChange.Location = new System.Drawing.Point(198, 478);
+            this.btnChange.Location = new System.Drawing.Point(198, 473);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(124, 23);
             this.btnChange.TabIndex = 0;
-            this.btnChange.Text = "Change";
+            this.btnChange.Text = "Edit PDF";
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
@@ -215,14 +220,14 @@
             this.txtName1.Location = new System.Drawing.Point(43, 43);
             this.txtName1.Name = "txtName1";
             this.txtName1.Size = new System.Drawing.Size(276, 20);
-            this.txtName1.TabIndex = 8;
+            this.txtName1.TabIndex = 1;
             // 
             // txtName2
             // 
             this.txtName2.Location = new System.Drawing.Point(43, 69);
             this.txtName2.Name = "txtName2";
             this.txtName2.Size = new System.Drawing.Size(276, 20);
-            this.txtName2.TabIndex = 9;
+            this.txtName2.TabIndex = 2;
             // 
             // label5
             // 
@@ -239,56 +244,56 @@
             this.txtName3.Location = new System.Drawing.Point(43, 95);
             this.txtName3.Name = "txtName3";
             this.txtName3.Size = new System.Drawing.Size(276, 20);
-            this.txtName3.TabIndex = 11;
+            this.txtName3.TabIndex = 3;
             // 
             // txtName4
             // 
             this.txtName4.Location = new System.Drawing.Point(43, 121);
             this.txtName4.Name = "txtName4";
             this.txtName4.Size = new System.Drawing.Size(276, 20);
-            this.txtName4.TabIndex = 12;
+            this.txtName4.TabIndex = 4;
             // 
             // txtName5
             // 
             this.txtName5.Location = new System.Drawing.Point(43, 147);
             this.txtName5.Name = "txtName5";
             this.txtName5.Size = new System.Drawing.Size(276, 20);
-            this.txtName5.TabIndex = 13;
+            this.txtName5.TabIndex = 5;
             // 
             // txtName6
             // 
             this.txtName6.Location = new System.Drawing.Point(43, 173);
             this.txtName6.Name = "txtName6";
             this.txtName6.Size = new System.Drawing.Size(276, 20);
-            this.txtName6.TabIndex = 14;
+            this.txtName6.TabIndex = 6;
             // 
             // txtName7
             // 
             this.txtName7.Location = new System.Drawing.Point(43, 199);
             this.txtName7.Name = "txtName7";
             this.txtName7.Size = new System.Drawing.Size(276, 20);
-            this.txtName7.TabIndex = 15;
+            this.txtName7.TabIndex = 7;
             // 
             // txtName8
             // 
             this.txtName8.Location = new System.Drawing.Point(43, 225);
             this.txtName8.Name = "txtName8";
             this.txtName8.Size = new System.Drawing.Size(276, 20);
-            this.txtName8.TabIndex = 16;
+            this.txtName8.TabIndex = 8;
             // 
             // txtName9
             // 
             this.txtName9.Location = new System.Drawing.Point(43, 251);
             this.txtName9.Name = "txtName9";
             this.txtName9.Size = new System.Drawing.Size(276, 20);
-            this.txtName9.TabIndex = 17;
+            this.txtName9.TabIndex = 9;
             // 
             // txtName10
             // 
             this.txtName10.Location = new System.Drawing.Point(43, 277);
             this.txtName10.Name = "txtName10";
             this.txtName10.Size = new System.Drawing.Size(276, 20);
-            this.txtName10.TabIndex = 18;
+            this.txtName10.TabIndex = 10;
             // 
             // label6
             // 
@@ -380,15 +385,6 @@
             this.label15.TabIndex = 28;
             this.label15.Text = "10";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(95, 318);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(43, 13);
-            this.label16.TabIndex = 29;
-            this.label16.Text = "แกน X:";
-            // 
             // label17
             // 
             this.label17.AutoSize = true;
@@ -449,84 +445,85 @@
             this.txtEmail10.Location = new System.Drawing.Point(351, 277);
             this.txtEmail10.Name = "txtEmail10";
             this.txtEmail10.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail10.TabIndex = 45;
+            this.txtEmail10.TabIndex = 20;
             // 
             // txtEmail9
             // 
             this.txtEmail9.Location = new System.Drawing.Point(351, 251);
             this.txtEmail9.Name = "txtEmail9";
             this.txtEmail9.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail9.TabIndex = 44;
+            this.txtEmail9.TabIndex = 19;
             // 
             // txtEmail8
             // 
             this.txtEmail8.Location = new System.Drawing.Point(351, 225);
             this.txtEmail8.Name = "txtEmail8";
             this.txtEmail8.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail8.TabIndex = 43;
+            this.txtEmail8.TabIndex = 18;
             // 
             // txtEmail7
             // 
             this.txtEmail7.Location = new System.Drawing.Point(351, 199);
             this.txtEmail7.Name = "txtEmail7";
             this.txtEmail7.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail7.TabIndex = 42;
+            this.txtEmail7.TabIndex = 17;
             // 
             // txtEmail6
             // 
             this.txtEmail6.Location = new System.Drawing.Point(351, 173);
             this.txtEmail6.Name = "txtEmail6";
             this.txtEmail6.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail6.TabIndex = 41;
+            this.txtEmail6.TabIndex = 16;
             // 
             // txtEmail5
             // 
             this.txtEmail5.Location = new System.Drawing.Point(351, 147);
             this.txtEmail5.Name = "txtEmail5";
             this.txtEmail5.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail5.TabIndex = 40;
+            this.txtEmail5.TabIndex = 15;
             // 
             // txtEmail4
             // 
             this.txtEmail4.Location = new System.Drawing.Point(351, 121);
             this.txtEmail4.Name = "txtEmail4";
             this.txtEmail4.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail4.TabIndex = 39;
+            this.txtEmail4.TabIndex = 14;
             // 
             // txtEmail3
             // 
             this.txtEmail3.Location = new System.Drawing.Point(351, 95);
             this.txtEmail3.Name = "txtEmail3";
             this.txtEmail3.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail3.TabIndex = 38;
+            this.txtEmail3.TabIndex = 13;
             // 
             // txtEmail2
             // 
             this.txtEmail2.Location = new System.Drawing.Point(351, 69);
             this.txtEmail2.Name = "txtEmail2";
             this.txtEmail2.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail2.TabIndex = 37;
+            this.txtEmail2.TabIndex = 12;
             // 
             // txtEmail1
             // 
             this.txtEmail1.Location = new System.Drawing.Point(351, 43);
             this.txtEmail1.Name = "txtEmail1";
             this.txtEmail1.Size = new System.Drawing.Size(276, 20);
-            this.txtEmail1.TabIndex = 36;
+            this.txtEmail1.TabIndex = 11;
             // 
             // txtMessage
             // 
-            this.txtMessage.Location = new System.Drawing.Point(651, 43);
+            this.txtMessage.Location = new System.Drawing.Point(651, 95);
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(431, 392);
-            this.txtMessage.TabIndex = 46;
+            this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMessage.Size = new System.Drawing.Size(304, 295);
+            this.txtMessage.TabIndex = 22;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label20.Location = new System.Drawing.Point(647, 20);
+            this.label20.Location = new System.Drawing.Point(647, 72);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(81, 20);
             this.label20.TabIndex = 47;
@@ -536,7 +533,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.label21.Location = new System.Drawing.Point(347, 318);
+            this.label21.Location = new System.Drawing.Point(647, 20);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(70, 20);
             this.label21.TabIndex = 48;
@@ -544,22 +541,22 @@
             // 
             // txtSubject
             // 
-            this.txtSubject.Location = new System.Drawing.Point(351, 349);
+            this.txtSubject.Location = new System.Drawing.Point(651, 43);
             this.txtSubject.Name = "txtSubject";
-            this.txtSubject.Size = new System.Drawing.Size(276, 20);
-            this.txtSubject.TabIndex = 49;
+            this.txtSubject.Size = new System.Drawing.Size(304, 20);
+            this.txtSubject.TabIndex = 21;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(406, 375);
+            this.txtUsername.Location = new System.Drawing.Point(405, 334);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(221, 20);
-            this.txtUsername.TabIndex = 50;
+            this.txtUsername.TabIndex = 23;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(348, 378);
+            this.label22.Location = new System.Drawing.Point(347, 337);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(35, 13);
             this.label22.TabIndex = 51;
@@ -568,80 +565,34 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(349, 402);
+            this.label23.Location = new System.Drawing.Point(348, 364);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(56, 13);
             this.label23.TabIndex = 52;
             this.label23.Text = "Password:";
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(349, 448);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(29, 13);
-            this.label24.TabIndex = 53;
-            this.label24.Text = "Port:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(349, 425);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(32, 13);
-            this.label26.TabIndex = 55;
-            this.label26.Text = "stmp:";
-            // 
-            // chkSSL
-            // 
-            this.chkSSL.AutoSize = true;
-            this.chkSSL.Location = new System.Drawing.Point(581, 447);
-            this.chkSSL.Name = "chkSSL";
-            this.chkSSL.Size = new System.Drawing.Size(46, 17);
-            this.chkSSL.TabIndex = 56;
-            this.chkSSL.Text = "SSL";
-            this.chkSSL.UseVisualStyleBackColor = true;
-            // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(406, 399);
+            this.txtPassword.Location = new System.Drawing.Point(405, 361);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(221, 20);
-            this.txtPassword.TabIndex = 57;
+            this.txtPassword.TabIndex = 24;
             // 
             // btnSend
             // 
             this.btnSend.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            this.btnSend.Location = new System.Drawing.Point(958, 445);
+            this.btnSend.Location = new System.Drawing.Point(785, 399);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(124, 23);
-            this.btnSend.TabIndex = 58;
+            this.btnSend.Size = new System.Drawing.Size(170, 50);
+            this.btnSend.TabIndex = 25;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // txtPort
-            // 
-            this.txtPort.Location = new System.Drawing.Point(406, 445);
-            this.txtPort.Name = "txtPort";
-            this.txtPort.ReadOnly = true;
-            this.txtPort.Size = new System.Drawing.Size(104, 20);
-            this.txtPort.TabIndex = 59;
-            this.txtPort.Text = "587";
-            // 
-            // txtSmtp
-            // 
-            this.txtSmtp.Location = new System.Drawing.Point(406, 422);
-            this.txtSmtp.Name = "txtSmtp";
-            this.txtSmtp.ReadOnly = true;
-            this.txtSmtp.Size = new System.Drawing.Size(221, 20);
-            this.txtSmtp.TabIndex = 60;
-            this.txtSmtp.Text = "smtp.gmail.com";
-            // 
             // txtExportedFilePath
             // 
-            this.txtExportedFilePath.Location = new System.Drawing.Point(31, 452);
+            this.txtExportedFilePath.Location = new System.Drawing.Point(31, 450);
             this.txtExportedFilePath.Name = "txtExportedFilePath";
             this.txtExportedFilePath.ReadOnly = true;
             this.txtExportedFilePath.Size = new System.Drawing.Size(210, 20);
@@ -658,7 +609,7 @@
             // 
             // btnExportedFilePath
             // 
-            this.btnExportedFilePath.Location = new System.Drawing.Point(247, 450);
+            this.btnExportedFilePath.Location = new System.Drawing.Point(247, 448);
             this.btnExportedFilePath.Name = "btnExportedFilePath";
             this.btnExportedFilePath.Size = new System.Drawing.Size(75, 23);
             this.btnExportedFilePath.TabIndex = 63;
@@ -666,21 +617,124 @@
             this.btnExportedFilePath.UseVisualStyleBackColor = true;
             this.btnExportedFilePath.Click += new System.EventHandler(this.btnExportedFilePath_Click);
             // 
+            // lb
+            // 
+            this.lb.AutoSize = true;
+            this.lb.Location = new System.Drawing.Point(348, 386);
+            this.lb.Name = "lb";
+            this.lb.Size = new System.Drawing.Size(74, 13);
+            this.lb.TabIndex = 64;
+            this.lb.Text = "เอกสารแนบ1:";
+            // 
+            // txtAttchPath1
+            // 
+            this.txtAttchPath1.Location = new System.Drawing.Point(350, 403);
+            this.txtAttchPath1.Name = "txtAttchPath1";
+            this.txtAttchPath1.ReadOnly = true;
+            this.txtAttchPath1.Size = new System.Drawing.Size(201, 20);
+            this.txtAttchPath1.TabIndex = 65;
+            // 
+            // txtAttchPath2
+            // 
+            this.txtAttchPath2.Location = new System.Drawing.Point(350, 439);
+            this.txtAttchPath2.Name = "txtAttchPath2";
+            this.txtAttchPath2.ReadOnly = true;
+            this.txtAttchPath2.Size = new System.Drawing.Size(201, 20);
+            this.txtAttchPath2.TabIndex = 67;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(348, 423);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(74, 13);
+            this.label16.TabIndex = 66;
+            this.label16.Text = "เอกสารแนบ2:";
+            // 
+            // txtAttchPath3
+            // 
+            this.txtAttchPath3.Location = new System.Drawing.Point(351, 475);
+            this.txtAttchPath3.Name = "txtAttchPath3";
+            this.txtAttchPath3.ReadOnly = true;
+            this.txtAttchPath3.Size = new System.Drawing.Size(201, 20);
+            this.txtAttchPath3.TabIndex = 69;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(348, 459);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(74, 13);
+            this.label24.TabIndex = 68;
+            this.label24.Text = "เอกสารแนบ3:";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(651, 475);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(304, 20);
+            this.progressBar1.TabIndex = 70;
+            // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Location = new System.Drawing.Point(648, 455);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(40, 13);
+            this.lbStatus.TabIndex = 71;
+            this.lbStatus.Text = "Status:";
+            // 
+            // btnAttchFile1
+            // 
+            this.btnAttchFile1.Location = new System.Drawing.Point(557, 401);
+            this.btnAttchFile1.Name = "btnAttchFile1";
+            this.btnAttchFile1.Size = new System.Drawing.Size(69, 23);
+            this.btnAttchFile1.TabIndex = 72;
+            this.btnAttchFile1.Text = "เลือกไฟล์";
+            this.btnAttchFile1.UseVisualStyleBackColor = true;
+            this.btnAttchFile1.Click += new System.EventHandler(this.btnAttchFile1_Click);
+            // 
+            // btnAttchFile2
+            // 
+            this.btnAttchFile2.Location = new System.Drawing.Point(557, 437);
+            this.btnAttchFile2.Name = "btnAttchFile2";
+            this.btnAttchFile2.Size = new System.Drawing.Size(69, 23);
+            this.btnAttchFile2.TabIndex = 73;
+            this.btnAttchFile2.Text = "เลือกไฟล์";
+            this.btnAttchFile2.UseVisualStyleBackColor = true;
+            this.btnAttchFile2.Click += new System.EventHandler(this.btnAttchFile2_Click);
+            // 
+            // btnAttchFile3
+            // 
+            this.btnAttchFile3.Location = new System.Drawing.Point(557, 473);
+            this.btnAttchFile3.Name = "btnAttchFile3";
+            this.btnAttchFile3.Size = new System.Drawing.Size(69, 23);
+            this.btnAttchFile3.TabIndex = 74;
+            this.btnAttchFile3.Text = "เลือกไฟล์";
+            this.btnAttchFile3.UseVisualStyleBackColor = true;
+            this.btnAttchFile3.Click += new System.EventHandler(this.btnAttchFile3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1094, 508);
+            this.ClientSize = new System.Drawing.Size(967, 503);
+            this.Controls.Add(this.btnAttchFile3);
+            this.Controls.Add(this.btnAttchFile2);
+            this.Controls.Add(this.btnAttchFile1);
+            this.Controls.Add(this.lbStatus);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.txtAttchPath3);
+            this.Controls.Add(this.label24);
+            this.Controls.Add(this.txtAttchPath2);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.txtAttchPath1);
+            this.Controls.Add(this.lb);
             this.Controls.Add(this.btnExportedFilePath);
             this.Controls.Add(this.txtExportedFilePath);
             this.Controls.Add(this.label25);
-            this.Controls.Add(this.txtSmtp);
-            this.Controls.Add(this.txtPort);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.chkSSL);
-            this.Controls.Add(this.label26);
-            this.Controls.Add(this.label24);
             this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.txtUsername);
@@ -704,7 +758,6 @@
             this.Controls.Add(this.btnFilePath);
             this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -775,7 +828,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Button btnFilePath;
@@ -799,16 +851,22 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.CheckBox chkSSL;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.TextBox txtPort;
-        private System.Windows.Forms.TextBox txtSmtp;
         private System.Windows.Forms.TextBox txtExportedFilePath;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Button btnExportedFilePath;
+        private System.Windows.Forms.Label lb;
+        private System.Windows.Forms.TextBox txtAttchPath1;
+        private System.Windows.Forms.TextBox txtAttchPath2;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtAttchPath3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.Button btnAttchFile1;
+        private System.Windows.Forms.Button btnAttchFile2;
+        private System.Windows.Forms.Button btnAttchFile3;
     }
 }
 

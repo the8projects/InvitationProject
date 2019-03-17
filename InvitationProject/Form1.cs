@@ -12,15 +12,19 @@ using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System.Net;
 using System.Net.Mail;
+using System.Threading;
 
 namespace InvitationProject
 {
     public partial class Form1 : Form
     {
-        NetworkCredential login;
-        SmtpClient client;
         MailMessage msg;
         string strFilePath;
+        string strAttchPath1;
+        string strAttchPath2;
+        string strAttchPath3;
+        Random randInt = new Random();
+        int randNum;
 
         public Form1()
         {
@@ -35,19 +39,19 @@ namespace InvitationProject
         {
             int count = 0;
             //int newFileName = 1;
-            if (strFilePath != "" && strFilePath != null)
+            if (!string.IsNullOrWhiteSpace(strFilePath))
             {
                 for (int i = 1; i < 11; i++)
                 {
-                    TextBox txtBox = (TextBox)this.Controls.Find("txtName" + i, true)[0];
-                    if (txtBox.Text != "" && txtBox.Text != null)
+                    TextBox txtName = (TextBox)this.Controls.Find("txtName" + i, true)[0];
+                    if (!string.IsNullOrWhiteSpace(txtName.Text))
                     {
                         count++;
                         PdfReader reader = new PdfReader(strFilePath);
                         Document doc = new Document(PageSize.A4);
 
                         //FileStream fs = new FileStream((newFileName++)+".pdf", FileMode.Create, FileAccess.Write);
-                        FileStream fs = new FileStream("ExportedFiles/"+txtBox.Text + ".pdf", FileMode.Create, FileAccess.Write);
+                        FileStream fs = new FileStream(txtExportedFilePath.Text + @"\หนังสือเชิญ" + txtName.Text + ".pdf", FileMode.Create, FileAccess.Write);
                         PdfWriter writer = PdfWriter.GetInstance(doc, fs);
                         doc.Open();
 
@@ -77,7 +81,7 @@ namespace InvitationProject
 
                         cb.BeginText();
                        
-                        string text = txtBox.Text;
+                        string text = txtName.Text;
 
                         cb.ShowTextAligned(0, text, Convert.ToInt32(numX.Value), Convert.ToInt32(numY.Value), 0);
                         cb.EndText();
@@ -94,14 +98,9 @@ namespace InvitationProject
                         fs.Close();
                         writer.Close();
                         reader.Close();
-                        /*
-                        Document doc = new Document(PageSize.A4, 100, 100, 100, 100);
-                        PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("Test.pdf", FileMode.Append));
-                        doc.Open();
-                        Paragraph paragraph = new Paragraph("This is my first line using Paragraph100.");
-                        doc.Add(paragraph);
-                        doc.Close();*/
                     }
+                    randNum = randInt.Next(442, 1178);
+                    Thread.Sleep(randNum);
                 }
                 if (count == 0)
                 {
@@ -115,39 +114,57 @@ namespace InvitationProject
         }
         private void btnSend_Click(object sender, EventArgs e)
         {
-            login = new NetworkCredential(txtUsername.Text, txtPassword.Text);
-            client = new SmtpClient(txtSmtp.Text);
-            client.Port = Convert.ToInt32(txtPort.Text);
-            client.EnableSsl = chkSSL.Checked;
-            client.Credentials = login;
-            msg = new MailMessage { From = new MailAddress(txtUsername.Text + txtSmtp.Text.Replace("smtp","@"), "Lucy", Encoding.UTF8) };
-            msg.To.Add(new MailAddress(txtEmail1.Text));
-            msg.Subject = txtSubject.Text;
-            msg.Body = txtMessage.Text;
-            msg.BodyEncoding = Encoding.UTF8;
-            msg.IsBodyHtml = true;
-            msg.Priority = MailPriority.Normal;
-            msg.DeliveryNotificationOptions = DeliveryNotificationOptions.OnFailure;
-            client.SendCompleted += new SendCompletedEventHandler(SendCompletedCallback);
-            string userstate = "Sending...";
-            client.SendAsync(msg, userstate);
+            int count = 0;
+            string strMsg;
+            for (int i = 1; i < 11; i++)
+            {
+                TextBox txtName = (TextBox)this.Controls.Find("txtName" + i, true)[0];
+                TextBox txtEmail = (TextBox)this.Controls.Find("txtEmail" + i, true)[0];
+                if ((!string.IsNullOrWhiteSpace(txtName.Text)) && (!string.IsNullOrWhiteSpace(txtEmail.Text)))
+                {
+                    count++;
+                    var client = new SmtpClient("smtp.gmail.com", 587)
+                    {
+                        Credentials = new NetworkCredential(txtUsername.Text, txtPassword.Text),
+                        EnableSsl = true
+                    };
+
+                    //strMsg = "เรียน " + txtName.Text + "@" + txtMessage.Text;
+                    //strMsg = strMsg.Replace("@", Environment.NewLine);
+                    var message = new MailMessage(txtEmail.Text, txtEmail.Text)
+                    {
+                        Subject = txtSubject.Text,
+                        Body = "เรียน " + txtName.Text + Environment.NewLine + txtMessage.Text
+                    };
+                    message.Attachments.Add(new Attachment(txtExportedFilePath.Text + @"\หนังสือเชิญ" + txtName.Text + ".pdf"));
+                    if (strAttchPath1 != "" && strAttchPath1 != null)
+                        message.Attachments.Add(new Attachment(strAttchPath1));
+                    if (strAttchPath2 != "" && strAttchPath2 != null)
+                        message.Attachments.Add(new Attachment(strAttchPath2));
+                    if (strAttchPath3 != "" && strAttchPath3 != null)
+                        message.Attachments.Add(new Attachment(strAttchPath3));
+                    client.Send(message);
+                }
+                randNum = randInt.Next(500, 1000);
+                Thread.Sleep(randNum);
+            }
+            if (count == 0)
+                MessageBox.Show("กรุณากรอกชื่อและEmail");
+
+            //var client = new SmtpClient("smtp.gmail.com", 587)
+            //{
+            //    Credentials = new NetworkCredential("suwanon.c@gmail.com", "e8FF6740"),
+            //    EnableSsl = true
+            //};
+            //var message = new MailMessage("zeroonez1team@gmail.com", "zeroonez1team@gmail.com")
+            //{
+            //    Subject = "Test sending invitation email",
+            //    Body = "testing"
+            //};
+            //message.Attachments.Add(new Attachment("ทดสอบ.pdf"));
+
         }
 
-        private static void SendCompletedCallback(object sender, AsyncCompletedEventArgs e)
-        {
-            if (e.Cancelled)
-            {
-                MessageBox.Show(string.Format("{0} send cancelled.", e.UserState), "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            if (e.Error != null)
-            {
-                MessageBox.Show(string.Format("{0} {1}", e.UserState, e.Error), "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Your message has been successfully sent.", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
 
         private void btnFilePath_Click(object sender, EventArgs e)
         {
@@ -167,6 +184,36 @@ namespace InvitationProject
             {
                 txtExportedFilePath.Text = folderBrowser.SelectedPath;
             }  
+        }
+
+        private void btnAttchFile1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                strAttchPath1 = openFileDialog.FileName;
+                txtAttchPath1.Text = strAttchPath1;
+            }
+        }
+
+        private void btnAttchFile2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                strAttchPath2 = openFileDialog.FileName;
+                txtAttchPath2.Text = strAttchPath2;
+            }
+        }
+
+        private void btnAttchFile3_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                strAttchPath3 = openFileDialog.FileName;
+                txtAttchPath3.Text = strAttchPath3;
+            }
         }
     }
 }
